@@ -1,5 +1,5 @@
 import cherrypy
-import cherrypy_cors
+# import cherrypy_cors
 import json
 import os
 from util import *
@@ -132,7 +132,7 @@ class MyWebService(object):
             event_ie_view = dict()
             event_ie_view['viewName'] = 'Event_extraction'
             event_ie_view['viewData'] = [tmp_view_data]
-
+            
             token_view = dict()
             token_view['viewName'] = 'TOKENS'
             tmp_token_view_data = dict()
@@ -187,11 +187,11 @@ if __name__ == '__main__':
     extractor = CogcompKairosEventExtractorTest(device, 'mbert')
     # IN ORDER TO KEEP IT IN MEMORY
     print("Starting rest service...")
-    cherrypy_cors.install()
+#     cherrypy_cors.install()
     config = {
         'global': {
             'server.socket_host': 'leguin.seas.upenn.edu',
-            'server.socket_port': 4023,
+            'server.socket_port': 4040,
             'cors.expose.on': True
         },
         '/': {
